@@ -344,8 +344,9 @@ function template_body_above()
 	if ($context['allow_search'])
 	{
 		echo '
-			<form id="search_form" class="floatleft" action="', $scripturl, '?action=search2" method="post" accept-charset="', $context['character_set'], '">
-				<input type="search" name="search" value="">&nbsp;';
+			<form class="custom_search" action="', $scripturl, '?action=search2" method="post" accept-charset="', $context['character_set'], '">
+				<input type="search" name="search" value="" placeholder="', $txt['search'], '">
+				<button><i class="far fa-edit"></i></button>';
 
 		// Using the quick search dropdown?
 		$selected = !empty($context['current_topic']) ? 'current_topic' : (!empty($context['current_board']) ? 'current_board' : 'all');
@@ -383,7 +384,6 @@ function template_body_above()
 				<input type="hidden" name="sd_brd" value="', $context['current_board'], '">';
 
 		echo '
-				<input type="submit" name="search2" value="', $txt['search'], '" class="button">
 				<input type="hidden" name="advanced" value="0">
 			</form>';
 	}

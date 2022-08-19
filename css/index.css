@@ -900,12 +900,12 @@ a[class^="mobile_generic_menu_"] {
 	min-width: 18.2em;
 	padding: 0.5em;
 	font-weight: normal;
-	border: solid 1px #999;
-	border-left: solid 1px #bbb;
-	border-top: solid 1px #ccc;
+	border: solid 1px #333;
+	border-left: solid 1px #444;
+	border-top: solid 1px #333;
 	border-radius: 4px;
-	box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
-	background: #fff;
+	box-shadow: 3px 3px 4px rgb(0 0 0 / 30%);
+	background: #17191f !important;
 }
 /* Level 2 link background. */
 .dropmenu li li {
@@ -1017,21 +1017,20 @@ a[class^="mobile_generic_menu_"] {
 .button, .quickbuttons > li > a, .inline_mod_check {
 	display: inline-block;
 	padding: 0 8px;
-	color: #444;
+	color: #f0f4f7;
 	font-size: 0.7rem;
 	line-height: 2em;
 	text-transform: uppercase;
 	cursor: pointer;
-	min-height: calc(2em + 2em * (0.9 - 0.85)); /* "input" font size minus ".button" font size */
+	min-height: calc(2em + 2em * (0.9 - 0.85));
 	border: 1px solid;
-	border-color: #ddd #bbb #aaa #ddd;
+	border-color: #e17724;
 	border-radius: 3px;
-	box-shadow: 1px 1px 1px rgba(221, 221, 221, 0.57);
 	box-sizing: border-box;
 	vertical-align: middle;
 }
 .pagesection .button {
-	color: #346;
+	color: #f7f7f7;
 }
 .button:hover, .button:focus,
 .quickbuttons > li:hover > a, .quickbuttons > li > a:focus {
@@ -1084,7 +1083,7 @@ a[class^="mobile_generic_menu_"] {
 
 /* Set maximum width limit for content */
 #top_section .inner_wrap, #wrapper, #header, #footer .inner_wrap {
-	max-width: 1200px;
+	min-width: 90%;
 	margin: 0 auto;
 	width: 90%;
 }
@@ -1102,7 +1101,7 @@ a[class^="mobile_generic_menu_"] {
 	clear: both;
 }
 #top_info {
-	padding: 5px 0;
+	padding: 18px 0;
 	line-height: 1.3em;
 	max-width: 100%;
 }
@@ -1252,7 +1251,7 @@ ul li.greeting {
 	padding: 0 10px;
 	font-size: 0.9em;
 	overflow: hidden;
-	border: 1px solid #ddd;
+	border: 1px solid #22242b;
 	border-radius: 2px;
 	box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.08);
 }
@@ -2878,7 +2877,8 @@ dl.addrules dt.floatleft {
 	background: #f0f4f7;
 }
 .windowbg:nth-of-type(odd), .bg.odd {
-	background: #fdfdfd;
+	background: linear-gradient(to right,#17191f,#23252c);
+	border-color: #383b46;
 }
 
 /* Highlight the target item */
@@ -3021,8 +3021,8 @@ h3 .collapse {
 	padding: 13px 10px 10px;
 }
 .boardindex_table .board_stats p {
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;
+	border-left: 1px solid #33333370;
+	border-right: 1px solid #33333370;
 }
 .info {
 	overflow: hidden;
@@ -3441,8 +3441,8 @@ img.avatar {
 .inner {
 	padding: 7px 8px 2px 2px;
 	margin: 0;
-	border-top: 1px solid #bfbfbf;
-	box-shadow: 0 1px 0 #fff inset;
+	border-top: 1px solid #383b46;
+	box-shadow: 0 1px 0 #222 inset;
 	min-height: 85px;
 	word-wrap: break-word; /* IE fallback */
 	overflow-wrap: break-word;
@@ -3733,21 +3733,20 @@ h3.catbg .main_icons::before, h3.catbg .icon {
 .roundframe {
 	margin: 10px 0 0 0;
 	padding: 12px 16px;
-	background: #f8f8f8;
-	border: 1px solid #c5c5c5;
+	background: #1d1f25;
+	border: 1px solid #22242b;
 	border-radius: 7px;
 	box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.1);
 	overflow: auto;
 }
 /* TitleBar & SubBar */
 .title_bar {
-	border: 1px solid #ddd;
-	border-top: 2px solid #ff9400;
-	border-bottom: 2px solid #bf6900;
-	background: #fff;
-	color: #666;
-	border-radius: 2px 2px 0 0;
-	margin: 5px 0 0 0;
+	background: #22242b;
+	color: #888d9d;
+	font-size: 15px;
+	font-weight: 500;
+	padding: 10px 0px;
+	border-radius: 7px 7px 0 0 !important;
 }
 .sub_bar {
 	border-bottom: 1px solid #ddd;
@@ -3780,14 +3779,14 @@ h3.titlebg, h4.titlebg, .titlebg, h3.subbg, h4.subbg, .subbg {
 /* Other */
 /* Information */
 .information {
-	background: #f8f8f8;
 	overflow: auto;
-	padding-bottom: .5em;
-	border: 1px solid #ddd;
+	padding-bottom: 0.5em;
+	border: 1px solid #23252c !important;
 	border-top: none;
 	border-radius: 0 0 7px 7px;
 	margin: 0 0 10px 0;
 	padding: 12px 9px 8px 9px;
+	background: linear-gradient(to right,#17191f,#23252c) !important;
 }
 .generic_list_wrapper .information div {
 	background: none;
@@ -3937,8 +3936,8 @@ h3.profile_hd::before,
 .quickbuttons li ul, .quickbuttons li ul li a:hover, .quickbuttons ul li a:focus,
 .inline_mod_check, .popup_window, #inner_section, .post_options ul,
 .post_options ul a:hover, .post_options ul a:focus, .notify_dropdown a:hover, .notify_dropdown a:focus {
-	background: #fff; /* fallback for some browsers */
-	background-image: linear-gradient(#e2e9f3 0%, #fff 70%);
+	background: #e17724;
+	background-image: linear-gradient(to right, #f89140, #e17724);
 }
 /* Well some of them has different gradient effect on hover */
 .button:hover, #search_form .button:hover, .quickbuttons li:hover {
@@ -4496,7 +4495,7 @@ content: "\f205";
 	align-items: center;
 	flex-direction: column;
 	width: 100%;
-	height: 60vh;
+	height: 50vh;
 	overflow: hidden;
 	position: relative;
 	background-position: center;
@@ -4559,4 +4558,66 @@ content: "\f205";
 	position: relative;
 	border-radius: 6px;
 	border: 1px solid #ededed;
+}
+.sceditor-container {
+	background: linear-gradient(to right,#17191f,#23252c) !important;
+	border: 1px solid #23252c !important;
+	color: #f7f7f7 !important;
+}
+.sceditor-container iframe,
+.sceditor-container textarea {
+	color: #f7f7f7 !important;
+	background: linear-gradient(to right,#17191f,#23252c) !important;
+}
+div.sceditor-toolbar {
+	background: #22242b !important;
+	border-bottom: 1px solid #333 !important;
+}
+/* Search */
+.custom_search {
+	padding: 8px 10px 8px;
+	display: flex;
+	align-self: flex-end;
+	align-items: center;
+	position: relative;
+	top: 1px;
+}
+.custom_search select,
+.custom_search input, .custom_search input.button,
+.custom_search button {
+	margin: 0 !important;
+    height: 3.5em;
+    font-size: 13px;
+    background: #17191f;
+    box-shadow: none;
+    padding: 1px 0;
+    border-radius: 8px;
+    border-color: #22242b;
+    color: #888d9d;
+}
+.custom_search select{
+	border-left: none;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	background: #17191f;
+}
+.custom_search input[name="search"] {
+	border-right: none;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	padding: 1px 8px;
+	width: 10em;
+	transition: width 0.5s ease-in-out;
+	-webkit-appearance: none;
+}
+.custom_search input[name="search"]:focus {
+	width: 18em;
+}
+.custom_search button {
+	border-width: 1px 0;
+	border-radius: 0;
+	padding: 1px 10px;
+}
+.custom_search button:hover {
+	cursor: pointer;
 }
