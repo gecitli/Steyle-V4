@@ -393,6 +393,30 @@ function template_body_above()
      </div>
 	</div><!-- #top_section -->';
 
+
+	// Hero
+		if (!empty($settings['hero_index'])) {
+		if (empty($_REQUEST['action']) && (empty($board)) && (empty($topic)))
+			$hero = 1; else $hero = 0; } else $hero = 1; if (!empty($settings['enable_hero']) && $hero == 1)
+	{
+		if(!empty($settings['hero_img']))
+				echo '
+			<div class="hero" style="background-image: url(', $settings['hero_img'] , ')">';
+				if(!empty($settings['hero_title']))
+				echo '
+					<h1>', $settings['hero_title'] , '</h1>';
+
+				if(!empty($settings['hero_description']))
+				echo '
+					<p>', $settings['hero_description'] , '</p>';
+
+				if(!empty($settings['hero_url']))
+				echo '
+					<a class="hero-button" href="', $settings['hero_url'] , '">', $txt['read_more'], '</a>';
+				echo '
+			</div><!-- .hero -->';
+	}
+
 	echo '
 	<div id="header">';
 
