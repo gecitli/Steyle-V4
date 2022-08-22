@@ -205,14 +205,18 @@ function template_body_above()
 		echo '
        <div id="lkHeader_main">
        <div class="inner_wrap">
-        <a class="mobile_user_menu">
-					<span class="menu_icon"></span>
-					<span class="text_menu">', $txt['mobile_user_menu'], '</span>
-				</a>
        <div class="floatleft forumtitle">
-			<a href="', $scripturl, '">', empty($context['header_logo_url_html_safe']) ? $context['forum_name_html_safe'] : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</a>
+	   <a id="top" href="', $scripturl, '">';
+
+	   if(!empty($settings['ft_icon'])) {
+	   echo ' <span style="color:', $settings['ft_icon_color'] , '">', $settings['ft_icon'] , '</span>';
+				  }
+	   echo ' ', empty($context['header_logo_url_html_safe']) ? $context['forum_name_html_safe'] : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</a>
 		</div>';
-	echo '
+		echo '
+		<a class="mobile_user_menu floatright">
+		<i class="fa-solid fa-align-right"></i>
+		</a>
 				<div id="main_menu" class="floatright">
 					<div id="mobile_user_menu" class="popup_container">
 						<div class="popup_window description">
@@ -226,6 +230,53 @@ function template_body_above()
       </div></div>
     <div id="lkHeader_sub">
     <div class="inner_wrap">';
+
+	if ($context['allow_search'])
+	{
+		echo '
+			<form class="custom_search floatleft" action="', $scripturl, '?action=search2" method="post" accept-charset="', $context['character_set'], '">
+				<input type="search" name="search" value="" placeholder="', $txt['search'], '">
+				<button><i class="fa-solid fa-magnifying-glass"></i></button>';
+
+		// Using the quick search dropdown?
+		$selected = !empty($context['current_topic']) ? 'current_topic' : (!empty($context['current_board']) ? 'current_board' : 'all');
+
+		echo '
+				<select name="search_selection">
+					<option value="all"', ($selected == 'all' ? ' selected' : ''), '>', $txt['search_entireforum'], ' </option>';
+
+		// Can't limit it to a specific topic if we are not in one
+		if (!empty($context['current_topic']))
+			echo '
+					<option value="topic"', ($selected == 'current_topic' ? ' selected' : ''), '>', $txt['search_thistopic'], '</option>';
+
+		// Can't limit it to a specific board if we are not in one
+		if (!empty($context['current_board']))
+			echo '
+					<option value="board"', ($selected == 'current_board' ? ' selected' : ''), '>', $txt['search_thisboard'], '</option>';
+
+		// Can't search for members if we can't see the memberlist
+		if (!empty($context['allow_memberlist']))
+			echo '
+					<option value="members"', ($selected == 'members' ? ' selected' : ''), '>', $txt['search_members'], ' </option>';
+
+		echo '
+				</select>';
+
+		// Search within current topic?
+		if (!empty($context['current_topic']))
+			echo '
+				<input type="hidden" name="sd_topic" value="', $context['current_topic'], '">';
+
+		// If we're on a certain board, limit it to this board ;).
+		elseif (!empty($context['current_board']))
+			echo '
+				<input type="hidden" name="sd_brd" value="', $context['current_board'], '">';
+
+		echo '
+				<input type="hidden" name="advanced" value="0">
+			</form>';
+	}
 
 	// If the user is logged in, display some things that might be useful.
 	if ($context['user']['is_logged'])
@@ -322,72 +373,6 @@ function template_body_above()
 			<ul class="floatright welcome">
 				<li>', sprintf($txt['welcome_guest'], $context['forum_name_html_safe'], $scripturl . '?action=login', 'return true;'), '</li>
 			</ul>';
-
-	if (!empty($modSettings['userLanguage']) && !empty($context['languages']) && count($context['languages']) > 1)
-	{
-		echo '
-			<form id="languages_form" method="get" class="floatleft">
-				<select id="language_select" name="language" onchange="this.form.submit()">';
-
-		foreach ($context['languages'] as $language)
-			echo '
-					<option value="', $language['filename'], '"', isset($context['user']['language']) && $context['user']['language'] == $language['filename'] ? ' selected="selected"' : '', '>', str_replace('-utf8', '', $language['name']), '</option>';
-
-		echo '
-				</select>
-				<noscript>
-					<input type="submit" value="', $txt['quick_mod_go'], '">
-				</noscript>
-			</form>';
-	}
-
-	if ($context['allow_search'])
-	{
-		echo '
-			<form id="search_form" class="floatleft" action="', $scripturl, '?action=search2" method="post" accept-charset="', $context['character_set'], '">
-				<input type="search" name="search" value="">&nbsp;';
-
-		// Using the quick search dropdown?
-		$selected = !empty($context['current_topic']) ? 'current_topic' : (!empty($context['current_board']) ? 'current_board' : 'all');
-
-		echo '
-				<select name="search_selection">
-					<option value="all"', ($selected == 'all' ? ' selected' : ''), '>', $txt['search_entireforum'], ' </option>';
-
-		// Can't limit it to a specific topic if we are not in one
-		if (!empty($context['current_topic']))
-			echo '
-					<option value="topic"', ($selected == 'current_topic' ? ' selected' : ''), '>', $txt['search_thistopic'], '</option>';
-
-		// Can't limit it to a specific board if we are not in one
-		if (!empty($context['current_board']))
-			echo '
-					<option value="board"', ($selected == 'current_board' ? ' selected' : ''), '>', $txt['search_thisboard'], '</option>';
-
-		// Can't search for members if we can't see the memberlist
-		if (!empty($context['allow_memberlist']))
-			echo '
-					<option value="members"', ($selected == 'members' ? ' selected' : ''), '>', $txt['search_members'], ' </option>';
-
-		echo '
-				</select>';
-
-		// Search within current topic?
-		if (!empty($context['current_topic']))
-			echo '
-				<input type="hidden" name="sd_topic" value="', $context['current_topic'], '">';
-
-		// If we're on a certain board, limit it to this board ;).
-		elseif (!empty($context['current_board']))
-			echo '
-				<input type="hidden" name="sd_brd" value="', $context['current_board'], '">';
-
-		echo '
-				<input type="submit" name="search2" value="', $txt['search'], '" class="button">
-				<input type="hidden" name="advanced" value="0">
-			</form>';
-	}
-
 	echo '
 		</div><!-- .inner_wrap -->
      </div>
@@ -450,7 +435,19 @@ function template_body_below()
 	// Show the footer with copyright, terms and help links.
 	echo '
 	<div id="footer">
-		<div class="inner_wrap">';
+		<div class="wt_footer">
+		<div class="inner_wrap">
+		<div class="footer__align">';
+
+	// Links footer	
+    footer_links();
+	
+		echo'
+		</div>
+	   </div>
+	</div>
+	<div class="bottom">
+	  <div class="inner_wrap">';
 
 	// There is now a global "Go to top" link at the right.
 	echo '
@@ -466,6 +463,7 @@ function template_body_below()
 
 	echo '
 		</div>
+	  </div>
 	</div><!-- #footer -->';
 
 }
@@ -548,14 +546,14 @@ function template_menu()
 	global $context;
 
 	echo '
-					<ul class="floatright dropmenu menu_nav lkNav_primary">';
+					<ul class="dropmenu menu_nav lkNav_primary">';
 
 	// Note: Menu markup has been cleaned up to remove unnecessary spans and classes.
 	foreach ($context['menu_buttons'] as $act => $button)
 	{
 		echo '
 						<li class="button_', $act, '', !empty($button['sub_buttons']) ? ' subsections"' : '"', '>
-							<a', $button['active_button'] ? ' class="active"' : '', ' href="', $button['href'], '"', isset($button['target']) ? ' target="' . $button['target'] . '"' : '', isset($button['onclick']) ? ' onclick="' . $button['onclick'] . '"' : '', '>
+						<a class="', $button['active_button'] ? 'active ' : '', 'firstlevel" href="', $button['href'], '"', isset($button['target']) ? ' target="' . $button['target'] . '"' : '', isset($button['onclick']) ? ' onclick="' . $button['onclick'] . '"' : '', '>
 								<div class="ipsMenuIcon ipsMenuIconType_fa"><i class="fa fa-', $act, ' fa-lg"></i></div><span class="textmenu">', $button['title'], !empty($button['amt']) ? ' <span class="amt">' . $button['amt'] . '</span>' : '', '</span>
 							</a>';
 
@@ -794,5 +792,23 @@ function template_maint_warning_below()
 {
 
 }
+function footer_links()
+{
+	global $settings, $context, $scripturl;
+		if (!empty($settings['enable_footer_links']))
+	 {
+	
+	if (!empty($settings['publicity1']))
+	echo '<div class="footer-col footer-col--1">'.$settings['publicity1'].'</div>';
 
+	if (!empty($settings['publicity2']))
+	echo '<div class="footer-col footer-col--2">'.$settings['publicity2'].'</div>';
+
+	if (!empty($settings['publicity3']))
+	echo '<div class="footer-col footer-col--3">'.$settings['publicity3'].'</div>';
+
+	if (!empty($settings['publicity4']))
+	echo '<div class="footer-col footer-col--4">'.$settings['publicity4'].'</div>';
+     }
+}
 ?>

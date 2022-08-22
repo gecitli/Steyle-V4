@@ -10,7 +10,7 @@
 	float: right;
 }
 .action_admin .table_grid td {
-	border: 1px solid #ddd;
+	border: 1px solid #23252c;
 	border-top: 0;
 }
 .action_admin .generic_list .flow_auto {
@@ -28,7 +28,7 @@ a.help span {
 	margin-right: 2px;
 }
 .table_caption, tr.table_caption td {
-	color: #000;
+	color: rgb(255, 254, 254);
 	font-size: 10px;
 	font-weight: bold;
 }
@@ -43,7 +43,7 @@ fieldset dl {
 }
 legend {
 	font-weight: bold;
-	color: #000;
+	color: #f8f4f4;
 }
 
 /* Styles for the admin home screen.
@@ -68,7 +68,7 @@ legend {
 
 /* The welcome thingy. */
 #welcome {
-	border: 1px solid #ddd;
+	border: 1px solid #23252c;
 	border-top: none;
 	border-radius: 0 0 7px 7px;
 	font-size: 0.9em;
@@ -88,7 +88,7 @@ legend {
 	padding: 5px 0;
 	overflow: auto;
 	line-height: 1.7em;
-	border-bottom: double #ccc;
+	border-bottom: double #23252c;
 }
 .search_results li:last-child {
 	border: none;
@@ -136,10 +136,10 @@ legend {
 }
 
 fieldset.admin_group legend {
-	background: #eaf1f4;
-	border: 1px solid #cacdd3;
-	padding: 1px 5px;
-	border-radius: 3px;
+	background: #222;
+    border: 1px solid #333;
+    padding: 1px 5px;
+    border-radius: 3px;
 }
 fieldset.admin_group a {
 	display: inline-block;
@@ -293,12 +293,12 @@ fieldset.admin_group .inactive {
 	border: none;
 }
 #package_list li {
-	border: 1px solid #cacdd3;
+	border: 1px solid #23252c;
 	padding: 0.2em;
 	margin: 1px;
 }
 .package_section {
-	border: 1px solid #cacdd3;
+	border: 1px solid #23252c;
 }
 span.package_server {
 	padding: 0 3em;
@@ -366,14 +366,14 @@ pre.file_content {
 	padding: 8px 0;
 	margin: 0;
 	border-radius: 0;
-	border: 1px solid #ddd;
+	border: 1px solid #23252c;
 	border-bottom: none;
 }
 #manage_boards li.windowbg:first-child {
 	border-top: none;
 }
 #manage_boards li.windowbg:last-child {
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #23252c;
 }
 #manage_boards li.windowbg:hover {
 	background: #d0e7f8;
@@ -476,12 +476,12 @@ span.search_weight {
 }
 .perm_boards li {
 	list-style-type: none;
-	border: 1px solid #cacdd3;
+	border: 1px solid #23252c;
 	border-top: 0;
 	padding: 0.2em;
 }
 .perm_boards li:first-child {
-	border-top: 1px solid #cacdd3;
+	border-top: 1px solid #23252c;
 }
 .perm_groups {
 	background-color: #fff;
@@ -545,7 +545,7 @@ ul.moderation_notes {
 }
 ul.moderation_notes li {
 	padding: 0.2em;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #23252c;
 }
 .notes {
 	margin-top: 0.4em;
@@ -563,8 +563,8 @@ ul.moderation_notes li {
 	padding: 3px 0;
 }
 .report_results th {
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;
+	border-left: 1px solid #23252c;
+	border-right: 1px solid #23252c;
 }
 
 #support_credits .sub_bar {
@@ -595,7 +595,7 @@ h3.config_hd {
 /* Css edit page */
 #css_preview_box {
 	margin-bottom: 2ex;
-	border: 1px solid #777;
+	border: 1px solid #23252c;
 	width: 100%;
 	height: 400px;
 }

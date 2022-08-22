@@ -184,6 +184,19 @@ function template_settings()
 			'description' => $txt['og_image_desc'],
 			'type' => 'url',
 		),
+		'',	
+		array(
+			'id' => 'ft_icon',
+			'label' => $txt['ft_icon'],
+			'description' => $txt['ft_icon_desc'],
+			'type' => 'text',
+		),
+		array(
+			'id' => 'ft_icon_color',
+			'label' => $txt['ft_icon_color'],
+			'description' => $txt['ft_icon_color_desc'],
+			'type' => 'text',
+		),
 		'',
 		array(
 			'id' => 'smiley_sets_default',
@@ -261,6 +274,31 @@ function template_settings()
 			'id' => 'hero_url',
 			'label' => $txt['hero_url'],
 			'type' => 'text',
+		),
+		'',
+		array(
+			'id' => 'enable_footer_links',
+			'label' => $txt['enable_footer_links'],
+		),
+		array(
+			'id' => 'publicity1',
+			'label' => $txt['publicity1'],
+			'type' => 'textarea',
+		),
+		array(
+			'id' => 'publicity2',
+			'label' => $txt['publicity2'],
+			'type' => 'textarea',
+		),
+		array(
+			'id' => 'publicity3',
+			'label' => $txt['publicity3'],
+			'type' => 'textarea',
+		),
+		array(
+			'id' => 'publicity4',
+			'label' => $txt['publicity4'],
+			'type' => 'textarea',
 		),
 	);
 }
