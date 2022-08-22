@@ -908,7 +908,6 @@ a[class^="mobile_generic_menu_"] {
 	border-radius: 4px;
 	box-shadow: 3px 3px 4px rgb(0 0 0 / 30%);
 	background: #17191f !important;
-	right: 0;
 }
 /* Level 2 link background. */
 .dropmenu li li {
@@ -1254,7 +1253,7 @@ ul li.greeting {
 	padding: 0 10px;
 	font-size: 0.9em;
 	overflow: hidden;
-	border: 1px solid rgba(136,141,157,0.1);
+	border: 1px solid #22242b;
 	border-radius: 2px;
 	box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.08);
 }
@@ -4591,6 +4590,7 @@ div.sceditor-toolbar {
 .custom_search button {
 	margin: 0 !important;
     height: 2.5em;
+    height: 3.5em;
     font-size: 13px;
     background: #17191f;
     box-shadow: none;
@@ -4886,14 +4886,13 @@ div.sceditor-toolbar {
     max-height: 115px !important;
 }
 .poster img.avatar {
-    max-width: 100%;
-    margin-top: -65px;
-    position: relative;
-    border-radius: 50%;
-    padding: 5px;
-    border-radius: 50%;
-    background-color: #fff;
-    box-shadow: 0 6px 21px 0rgba(0,0,0,.12);
+	max-width: 100%;
+	margin-top: -65px;
+	position: relative;
+	border-radius: 50%;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #22242b;
 }
 .user_info {
     padding: 0px 10px;
