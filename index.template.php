@@ -374,24 +374,6 @@ function template_body_above()
 				<li>', sprintf($txt['welcome_guest'], $context['forum_name_html_safe'], $scripturl . '?action=login', 'return true;'), '</li>
 			</ul>';
 
-	if (!empty($modSettings['userLanguage']) && !empty($context['languages']) && count($context['languages']) > 1)
-	{
-		echo '
-			<form id="languages_form" method="get" class="floatleft">
-				<select id="language_select" name="language" onchange="this.form.submit()">';
-
-		foreach ($context['languages'] as $language)
-			echo '
-					<option value="', $language['filename'], '"', isset($context['user']['language']) && $context['user']['language'] == $language['filename'] ? ' selected="selected"' : '', '>', str_replace('-utf8', '', $language['name']), '</option>';
-
-		echo '
-				</select>
-				<noscript>
-					<input type="submit" value="', $txt['quick_mod_go'], '">
-				</noscript>
-			</form>';
-	}
-
 	echo '
 		</div><!-- .inner_wrap -->
      </div>

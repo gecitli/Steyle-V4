@@ -906,8 +906,8 @@ a[class^="mobile_generic_menu_"] {
 	border-left: solid 1px #444;
 	border-top: solid 1px #333;
 	border-radius: 4px;
-	box-shadow: 3px 3px 4px rgb(0 0 0 / 30%);
-	background: #17191f !important;
+	box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+	background: #fff;
 }
 /* Level 2 link background. */
 .dropmenu li li {
