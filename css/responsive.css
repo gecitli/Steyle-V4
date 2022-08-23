@@ -602,6 +602,9 @@
 	.dropmenu li ul ul {
 		margin: 0 !important;
 	}
+	ul.lkNav_primary > li > a {
+		flex-direction: inherit;
+	}
 }
 
 @media (min-width: 481px) and (max-width: 560px) {
