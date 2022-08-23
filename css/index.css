@@ -1026,7 +1026,7 @@ a[class^="mobile_generic_menu_"] {
 	cursor: pointer;
 	min-height: calc(2em + 2em * (0.9 - 0.85));
 	border: 1px solid;
-	border-color: #e17724;
+	border-color: rgba(136,141,157,0.1);
 	border-radius: 3px;
 	box-sizing: border-box;
 	vertical-align: middle;
@@ -1038,7 +1038,6 @@ a[class^="mobile_generic_menu_"] {
 .quickbuttons > li:hover > a, .quickbuttons > li > a:focus {
 	color: #ffffff;
 	border-color: rgba(136,141,157,0.1);
-	box-shadow: -1px -1px 2px rgba(221, 221, 221, 0.7), -1px -2px 4px #ddd inset;
 	text-decoration: none;
 }
 .button:hover, .button:focus {
@@ -1392,19 +1391,16 @@ ul li.greeting {
 /* Drop part of QuickButtons */
 .post_options ul {
 	display: none;
-	position: absolute;
-	top: 100%;
-	right: -1px;
-	z-index: 90;
-	padding: 6px;
-	background: #fff;
-	font-weight: normal;
-	text-align: left;
-	border: solid 1px #999;
-	border-left: solid 1px #aaa;
-	border-top: solid 1px #bbb;
-	border-radius: 4px 0 4px 4px;
-	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 100%;
+    right: -1px;
+    z-index: 90;
+    padding: 6px;
+    background: #17191f;
+    font-weight: normal;
+    text-align: left;
+    border: solid 1px rgb(136 141 157 / 10%);
+    border-radius: 4px 0 4px 4px;
 }
 .post_options:hover ul {
 	display: block;
@@ -1419,7 +1415,13 @@ ul li.greeting {
 	border-radius: 3px;
 }
 .post_options ul a:hover, .post_options ul a:focus {
-	border-color: #c4cbd3;
+	border-color: #f3c90d;
+	background-color: #ff9800;
+}
+.dropmenu li li a:hover  {
+    border-color: #f3c90d;
+    background-color: #ff9800;
+	color: #e0e6ed;
 }
 /* Note: The next declarations are for keyboard access with js disabled. */
 .quickbuttons ul li a:focus {
@@ -3924,21 +3926,10 @@ h3.profile_hd::before,
 .dropmenu li ul, .top_menu {
     transform: translate3d(-150px, 0px, 0px);
 }
-/* Those classes are sharing exact same gradient. */
-/* Background of buttons */
-.dropmenu li li:hover, .button,
-.dropmenu li li:hover > a, .dropmenu li li a:focus, .dropmenu li li a:hover,
-.quickbuttons > li,
-.quickbuttons li ul, .quickbuttons li ul li a:hover, .quickbuttons ul li a:focus,
-.inline_mod_check, #inner_section, .post_options ul,
-.post_options ul a:hover, .post_options ul a:focus, .notify_dropdown a:hover, .notify_dropdown a:focus {
-	background: #e17724;
-	background-image: linear-gradient(to right, #f89140, #e17724);
-}
 /* Well some of them has different gradient effect on hover */
 .button:hover, #search_form .button:hover, .quickbuttons li:hover {
-	background: #fff;
-	background-image: linear-gradient(to bottom, #fff 0%, #e2e9f3 70%);
+	background: #17191f;
+    background-image: linear-gradient(to bottom, #1d1f25 0%, #17191f 70%);
 }
 /* If it fits I sits... */
 .navigate_section ul, .popup_content, .up_contain {
@@ -4870,10 +4861,7 @@ div.sceditor-toolbar {
 	margin: 0;
 }
 .postbit-banner {
-    background-image: -webkit-gradient(linear, left top, right top, from(#ff9800), to(#ff5722));
-    background-image: -webkit-linear-gradient(left, #ff9800, #ff5722);
-    background-image: -o-linear-gradient(left, #ff9800, #ff5722);
-    background-image: linear-gradient(to right, #ff9800, #ff5722);
+    background-color: #54709226;
     height: 90px;
     width: 100%;
     padding: 0;
@@ -4883,7 +4871,7 @@ div.sceditor-toolbar {
 .avatar {
     text-align: center;
 }
-.poster .avatar a {
+.poster .avatar a, .poster .avatar img {
     max-width: 115px !important;
     max-height: 115px !important;
 }
