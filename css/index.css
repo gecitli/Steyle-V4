@@ -3923,7 +3923,11 @@ h3.profile_hd::before,
 	background: url(../images/post/xx.png) 2px no-repeat;
 	padding: 25px 6px 25px 18px;
 }
+<<<<<<< HEAD
 #main_menu .dropmenu li ul {
+=======
+.dropmenu li ul, .top_menu {
+>>>>>>> 2b09713974dd656a52be38e8cb75cd7a8c2ecde2
     transform: translate3d(-150px, 0px, 0px);
 }
 /* Well some of them has different gradient effect on hover */
@@ -4898,6 +4902,7 @@ div.sceditor-toolbar {
     font-weight: normal;
     text-align: center;
     margin: 0;
+<<<<<<< HEAD
 }
 .topic-item {
     position: relative;
@@ -4930,4 +4935,6 @@ div.sceditor-toolbar {
     width: 40px;
     height: 40px;
     border-radius: var(--avatar-border-radius);
+=======
+>>>>>>> 2b09713974dd656a52be38e8cb75cd7a8c2ecde2
 }
