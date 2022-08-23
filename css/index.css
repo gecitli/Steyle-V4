@@ -907,7 +907,7 @@ a[class^="mobile_generic_menu_"] {
 	border-top: solid 1px #333;
 	border-radius: 4px;
 	box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
-	background: #fff;
+	background: #23252c;
 }
 /* Level 2 link background. */
 .dropmenu li li {
@@ -3921,10 +3921,12 @@ h3.profile_hd::before,
 	background: url(../images/post/xx.png) 2px no-repeat;
 	padding: 25px 6px 25px 18px;
 }
-
+.dropmenu li ul, .top_menu {
+    transform: translate3d(-150px, 0px, 0px);
+}
 /* Those classes are sharing exact same gradient. */
 /* Background of buttons */
-.dropmenu li ul, .top_menu, .dropmenu li li:hover, .button,
+.dropmenu li li:hover, .button,
 .dropmenu li li:hover > a, .dropmenu li li a:focus, .dropmenu li li a:hover,
 .quickbuttons > li,
 .quickbuttons li ul, .quickbuttons li ul li a:hover, .quickbuttons ul li a:focus,
