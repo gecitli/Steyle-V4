@@ -3923,7 +3923,7 @@ h3.profile_hd::before,
 	background: url(../images/post/xx.png) 2px no-repeat;
 	padding: 25px 6px 25px 18px;
 }
-.dropmenu li ul, .top_menu {
+#main_menu .dropmenu li ul {
     transform: translate3d(-150px, 0px, 0px);
 }
 /* Well some of them has different gradient effect on hover */
