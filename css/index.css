@@ -801,7 +801,7 @@ a[class^="mobile_generic_menu_"] {
 	vertical-align: middle;
 }
 .profile_user_avatar img.avatar {
-	max-width: 100px;
+	max-width: 55px!important;
 }
 .profile_username {
 	font-size: 150%;
@@ -810,7 +810,7 @@ a[class^="mobile_generic_menu_"] {
 .profile_user_links ol {
 	margin-left: 10px;
 	clear: both;
-	column-count: 2;
+	column-count: 1;
 }
 .profile_user_links li {
 	font-size: .8rem;
@@ -933,6 +933,9 @@ a[class^="mobile_generic_menu_"] {
 /* The profile/pm menus are declared off .dropmenu li ul for consistency but have other characteristics. */
 .top_menu {
 	min-width: 25em;
+}
+#profile_menu {
+	min-width: 15em !important;
 }
 .top_menu .login {
 	width: 100%;
