@@ -74,8 +74,7 @@ function template_main()
 		echo '
 		<div class="main_container">
 			<div class="cat_bar ', $category['is_collapsed'] ? 'collapsed' : '', '" id="category_', $category['id'], '">
-				<h3 class="catbg">
-				<div class="lkForum_icon"><i class="fa fa-comments"></i></div>';
+				<h3 class="catbg">';
 
 		// If this category even can collapse, show a link to collapse it.
 		if ($category['can_collapse'])
@@ -83,6 +82,7 @@ function template_main()
 					<span id="category_', $category['id'], '_upshrink" class="', $category['is_collapsed'] ? 'toggle_down' : 'toggle_up', ' floatright" data-collapsed="', (int) $category['is_collapsed'], '" title="', !$category['is_collapsed'] ? $txt['hide_category'] : $txt['show_category'], '" style="display: none;"></span>';
 
 		echo '
+		<span class="lkForum_icon"><i class="fa fa-comments"></i></span>
 					', $category['link'], '
 				</h3>', !empty($category['description']) ? '
 				<div class="desc">' . $category['description'] . '</div>' : '', '
