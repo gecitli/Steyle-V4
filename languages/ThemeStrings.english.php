@@ -1,11 +1,11 @@
 <?php
 // Version: 2.1 RC4; index
-$txt['enable_hero'] = 'Enable Hero';
-$txt['hero_index'] = 'Show Hero on front page only';
-$txt['hero_img_url'] = 'Hero IMG URL';
-$txt['hero_title'] = 'Hero h1 Title';
-$txt['hero_description'] = 'Hero Description';
-$txt['hero_url'] = 'Hero Button URL';
+$txt['enable_silder'] = 'Enable silder';
+$txt['silder_index'] = 'Show silder on front page only';
+$txt['silder_img_url'] = 'silder IMG URL';
+$txt['silder_title'] = 'silder h1 Title';
+$txt['silder_description'] = 'silder Description';
+$txt['silder_url'] = 'silder Button URL';
 $txt['read_more'] = 'Read More';
 
 $txt['enable_footer_links'] = 'Enable links in footer';

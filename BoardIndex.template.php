@@ -239,9 +239,20 @@ function template_bi_redirect_stats($board)
  */
 function template_bi_board_lastpost($board)
 {
-	if (!empty($board['last_post']['id']))
-		echo '
-			<p>', $board['last_post']['last_post_message'], '</p>';
+	if (empty($board['last_post']['id']))
+		return;
+
+	echo '
+		<div class="topic-item">
+			<div class="topic-item-poster-avatar">', $board['last_post']['member']['avatar']['image'], '</div>
+			<div class="topic-item-content">
+				<div class="topic-item-title">', $board['last_post']['link'], '</div>
+				<div class="topic-item-details">
+					<div class="topic-item-poster">', $board['last_post']['member']['link'], '</div>
+					<div class="topic-item-time">', icon('far fa-clock'), ' ', timeformat($board['last_post']['timestamp']), '</div>
+				</div>
+			</div>
+		</div>';
 }
 
 /**
