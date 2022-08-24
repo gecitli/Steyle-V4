@@ -1136,7 +1136,7 @@ a[class^="mobile_generic_menu_"] {
 }
 /* The logo and slogan. */
 #header {
-	padding: 2px 2px 12px 2px;
+	padding: 12px 2px 12px 2px;
 	display: flex;
 	align-items: flex-end;
 }
@@ -4210,6 +4210,10 @@ img.theme_thumbnail {
 	word-break: break-word;
 }
 /* yeni tema */
+:root {
+    --font-size: 14px;
+    --avatar-border-radius: 100%;
+}
 #lkHeader_main {
 	display: flex;
 	min-height: 100px;
