@@ -380,27 +380,27 @@ function template_body_above()
 	</div><!-- #top_section -->';
 
 
-	// Hero
-		if (!empty($settings['hero_index'])) {
+	// silder
+		if (!empty($settings['silder_index'])) {
 		if (empty($_REQUEST['action']) && (empty($board)) && (empty($topic)))
-			$hero = 1; else $hero = 0; } else $hero = 1; if (!empty($settings['enable_hero']) && $hero == 1)
+			$silder = 1; else $silder = 0; } else $silder = 1; if (!empty($settings['enable_silder']) && $silder == 1)
 	{
-		if(!empty($settings['hero_img']))
+		if(!empty($settings['silder_img']))
 				echo '
-			<div class="hero" style="background-image: url(', $settings['hero_img'] , ')">';
-				if(!empty($settings['hero_title']))
+			<section class="silder" style="background-image: url(', $settings['silder_img'] , ')">';
+				if(!empty($settings['silder_title']))
 				echo '
-					<h1>', $settings['hero_title'] , '</h1>';
+					<h1>', $settings['silder_title'] , '</h1>';
 
-				if(!empty($settings['hero_description']))
+				if(!empty($settings['silder_description']))
 				echo '
-					<p>', $settings['hero_description'] , '</p>';
+					<p>', $settings['silder_description'] , '</p>';
 
-				if(!empty($settings['hero_url']))
+				if(!empty($settings['silder_url']))
 				echo '
-					<a class="hero-button" href="', $settings['hero_url'] , '">', $txt['read_more'], '</a>';
+					<a class="silder-button" href="', $settings['silder_url'] , '">', $txt['read_more'], '</a>';
 				echo '
-			</div><!-- .hero -->';
+			</section><!-- .silder -->';
 	}
 
 	echo '
@@ -408,6 +408,11 @@ function template_body_above()
 
 	echo '
 		', empty($settings['site_slogan']) ? '<img id="smflogo" src="' . $settings['images_url'] . '/smflogo.svg" alt="Simple Machines Forum" title="Simple Machines Forum">' : '<div id="siteslogan">' . $settings['site_slogan'] . '</div>', '';
+		echo '
+						<div class="p-title-pageAction">
+								<a href="', $scripturl, '?action=unread" class="button button--icon button--icon--bolt" title="', $txt['unread_since_visit'], '"><span class="button-text">', $txt['view_unread_category'], '</span></a>
+								<a href="', $scripturl, '?action=unreadreplies" class="button--cta button button--icon button--icon--write" title="', $txt['show_unread_replies'], '"><span class="button-text">', $txt['unread_replies'], '</span></a>
+						</div>';
 
 	echo '
 	</div>

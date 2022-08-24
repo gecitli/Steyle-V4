@@ -1160,12 +1160,13 @@ h1.forumtitle a {
 }
 /* Float these items to the right */
 #siteslogan, img#smflogo {
-	padding-right: 2px;
-	font-size: 1.4em;
-}
-/* Tweak the SMF logo */
-img#smflogo {
-	margin: 16px 0 0 0;
+	padding: 0;
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    font-weight: 400;
+    min-width: 0;
+    margin-right: auto;
+    color: #fff;
 }
 /* Even guests need to be aligned */
 .welcome {
@@ -4488,7 +4489,7 @@ content: "\f205";
 	background: none;
 	padding: 0;
 }
-.hero {
+.silder {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -4502,11 +4503,11 @@ content: "\f205";
 	background-size: cover;
 	background-color: #13151a;
 }
-.hero a {
+.silder a {
 	color: #fff;
 	text-decoration: none;
 }
-.hero h1 {
+.silder h1 {
 	font-style: normal;
 	font-weight: bold;
 	color: #f7f7f7;
@@ -4518,7 +4519,7 @@ content: "\f205";
 	line-height: 2.7vw;
 	margin-bottom: 10px;
 }
-.hero p {
+.silder p {
 	font-style: normal;
 	color: #eee;
 	font-size: 1.8vmin;
@@ -4529,7 +4530,7 @@ content: "\f205";
 	line-height: 2.7vw;
 	padding: 20px;
 } 
-.hero-button {
+.silder-button {
 	background: #f49a3a;
 	border-radius: 3px;
 	border: 1px solid #f7ac22;
@@ -4544,7 +4545,7 @@ content: "\f205";
 	-webkit-appearance: none;
 	-moz-appearance: none;
 }
-.hero-button:hover {
+.silder-button:hover {
 	background-color: #4b7bec;
 	border: 1px solid #4b7bec;
 	color: #fff;
@@ -4558,6 +4559,7 @@ content: "\f205";
 	border-radius: 6px;
 	border: 1px solid #ededed;
 }
+/* sceditor */
 .sceditor-container {
 	background: linear-gradient(to right,#17191f,#23252c) !important;
 	border: 1px solid #23252c !important;
@@ -4571,6 +4573,10 @@ content: "\f205";
 div.sceditor-toolbar {
 	background: #22242b !important;
 	border-bottom: 1px solid #333 !important;
+}
+div.sceditor-group {
+    background: #292b34 !important;
+    border-bottom: 1px solid #22242b !important;
 }
 /* Search */
 .custom_search {
@@ -4897,4 +4903,32 @@ div.sceditor-toolbar {
     font-weight: normal;
     text-align: center;
     margin: 0;
+}
+.topic-item-poster-avatar {
+    margin-inline-end: 6px;
+    float: left;
+    position: relative;
+}
+.topic-item-poster-avatar .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--avatar-border-radius);
+}
+.topic-item-content {
+    flex-grow: 1;
+    overflow: hidden;
+    padding-left: 9px;
+}
+.topic-item-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: calc(var(--font-size) - 1px);
+}
+.topic-item-details>*:first-child {
+    margin-inline-start: 0;
+}
+.topic-item-details>* {
+    margin-inline-start: 3px;
+    margin-inline-end: 3px;
 }

@@ -605,6 +605,9 @@
 	ul.lkNav_primary > li > a {
 		flex-direction: inherit;
 	}
+	#main_menu .dropmenu li ul {
+		transform: translate3d(0px, 0px, 0px);
+	}
 }
 
 @media (min-width: 481px) and (max-width: 560px) {
