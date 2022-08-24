@@ -4559,6 +4559,7 @@ content: "\f205";
 	border-radius: 6px;
 	border: 1px solid #ededed;
 }
+/* sceditor */
 .sceditor-container {
 	background: linear-gradient(to right,#17191f,#23252c) !important;
 	border: 1px solid #23252c !important;
@@ -4572,6 +4573,10 @@ content: "\f205";
 div.sceditor-toolbar {
 	background: #22242b !important;
 	border-bottom: 1px solid #333 !important;
+}
+div.sceditor-group {
+    background: #292b34 !important;
+    border-bottom: 1px solid #22242b !important;
 }
 /* Search */
 .custom_search {
