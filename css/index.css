@@ -1136,7 +1136,7 @@ a[class^="mobile_generic_menu_"] {
 }
 /* The logo and slogan. */
 #header {
-	padding: 2px 2px 12px 2px;
+	padding: 12px 2px 12px 2px;
 	display: flex;
 	align-items: flex-end;
 }
@@ -4210,6 +4210,10 @@ img.theme_thumbnail {
 	word-break: break-word;
 }
 /* yeni tema */
+:root {
+    --font-size: 14px;
+    --avatar-border-radius: 100%;
+}
 #lkHeader_main {
 	display: flex;
 	min-height: 100px;
@@ -4295,9 +4299,9 @@ content: "\f204";
 content: "\f205"; 
 }
 .lkForum_icon {
-    background: #1ed79d;
-    background-image: linear-gradient(to right bottom,#1ed79d,#05c6b1);
-    box-shadow: 0 2px 19px 1px rgb(30 215 157 / 30%);
+    background: #ff5722;
+    background-image: linear-gradient(to right bottom,#ff9800,#ff7043);
+    box-shadow: 0 2px 19px 1px rgba(224, 141, 15, 0.3);
     color: #fff;
     height: 26px;
     width: 26px;
@@ -4664,14 +4668,22 @@ div.sceditor-group {
     bottom: -1px;
     height: 1px;
     width: 60px;
-    background: #1ed79d;
+    background: #ff9800;
 }
 .head i {
     position: absolute;
     left: 0;
     top: 1px;
     font-size: 24px;
-    color: #1ed79d;
+    color: #ff9800;
+}
+.p-title-pageAction .button--cta {
+	background: #e17724;
+    background-image: linear-gradient(to right, #f89140, #e17724);
+}
+.dropmenu a.firstlevel {
+    border-color: transparent;
+    background: none;
 }
 .footer-col strong .ent {
     margin-left: 1px;
